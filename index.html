@@ -910,19 +910,7 @@
                           Prendre <p class=" sm:text-4xl text-[#EBBC86]">Contact</p>
                         </h2>
                       </div>
-
-                       <!-- message d'alerte  --> 
-                      <?php if (isset($_GET['success']) && $_GET['success'] === '1') : ?>
-                      <div class="mb-6 text-center rounded bg-green-600/20 px-6 py-4 text-green-300 border border-green-500">
-                        ✅ Votre message a été envoyé avec succès !
-                      </div>
-
-                      <?php elseif (isset($_GET['error']) && $_GET['error'] === '1') : ?>
-                      <div class="mb-6 text-center rounded bg-red-600/20 px-6 py-4 text-red-300 border border-red-500">
-                        ❌ Une erreur est survenue lors de l’envoi du message. Veuillez réessayer.
-                      </div>
-                      <?php endif; ?>
-
+                        
                       <!-- Formulaire  -->
                       <form class="w-full space-y-6" method="POST" action="send.php" onsubmit="return confirmSend();">
                         <div>
