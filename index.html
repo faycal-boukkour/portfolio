@@ -7,7 +7,7 @@
     
         <!-- SEO Meta -->
         <title>Fayçal BOUKKOUR | Développeur Web & Web Mobile</title>
-        <meta name="description" content="Découvrez le portfolio de Fayçal BOUKKOUR, développeur d'applications web et web mobile. Parcourez mes projets, mes compétences en développement Front-End et Back-End.">
+        <meta name="description" content="Découvrez le portfolio de Fayçal BOUKKOUR, développeur d'applications web et mobile. Parcourez mes projets, mes compétences en développement Front-End et Back-End.">
         <meta name="keywords" content="Fayçal BOUKKOUR, développeur web, web mobile, portfolio, HTML, CSS, JavaScript, PHP, projets web, Front-End, Back-End, développement, Github, Codepen, Linkedin">
         <meta name="author" content="Fayçal BOUKKOUR">
 
@@ -151,7 +151,16 @@
                             </span>
                         </p>
                         <p class="mb-4 text-justify">
-                            Je suis un développeur Web junior formé chez
+                            Je suis développeur Web basé à Avignon, diplômé du
+                            <!-- -->
+                            <a aria-label="Tp"
+                                class="font-medium text-slate-200 hover:text-[#EBBC86] focus-visible:text-[#EBBC86]"
+                                href="https://www.francecompetences.fr/recherche/rncp/37674/"
+                                rel="noreferrer noopener" target="_blank">
+                                Titre Professionnel Développeur Web et Web Mobile
+                            </a> 
+                            chez 
+                            <!-- -->
                             <a aria-label="Simplon"
                                 class="font-medium text-slate-200 hover:text-[#EBBC86] focus-visible:text-[#EBBC86]"
                                 href="https://www.simplon.co/" rel="noreferrer noopener" target="_blank">
@@ -161,34 +170,17 @@
                             <a aria-label="Avenir"
                                 class="font-medium text-slate-200 hover:text-[#EBBC86] focus-visible:text-[#EBBC86]"
                                 href="https://avenir-84.org/" rel="noreferrer noopener" target="_blank">
-                                Avenir 84
+                                Avenir 84.
                             </a>
-                            et vis actuellement sur Avignon.
                         </p>
                         <p class="mb-4 text-justify">
-                            Dans mon parcours professionnel, j'ai occupé plusieurs postes dans différents
-                            secteurs, notamment en tant que technicien en maintenance et réparation de produits
-                            multimédia, ainsi que chef d'équipe et responsable transport dans le domaine de la
-                            logistique.
+                            Au cours de mon parcours professionnel, j’ai occupé plusieurs postes dans des secteurs variés, notamment en tant que technicien en maintenance et chef d’équipe dans le domaine de la logistique. Ces expériences m’ont permis de développer des compétences en gestion d’équipe et en pilotage de projet, tout en renforçant ma capacité d’analyse et mon engagement à atteindre des objectifs concrets.
                         </p>
                         <p class="mb-4 text-justify">
-                            Récemment diplômé du
-                            <!-- -->
-                            <a aria-label="Tp"
-                                class="font-medium text-slate-200 hover:text-[#EBBC86] focus-visible:text-[#EBBC86]"
-                                href="https://www.francecompetences.fr/recherche/rncp/37674/"
-                                rel="noreferrer noopener" target="_blank">
-                                Titre Professionnel Développeur Web et Web Mobile
-                            </a>
-                            et en formation en autodidacte depuis 6 mois, je me spécialise dans les bases du
-                            développement front-end et back-end, avec une attention particulière à l'expérience
-                            utilisateur et à la performance des applications.
+                            Formé aux fondamentaux du développement Front-end et Back-end, je continue à approfondir mes compétences en autodidacte, avec une attention particulière portée à la performance, à l’expérience utilisateur et aux bonnes pratiques de développement.
                         </p>
                         <p class="mb-4 text-justify">
-                            Passionné, curieux et toujours motivé par l'apprentissage, je suis actuellement à la
-                            recherche de nouvelles opportunités et j'aimerais intégrer un poste de développeur
-                            Web pour mettre mes compétences en pratique et continuer à progresser dans ce métier
-                            qui me passionne.
+                            Passionné, curieux et autonome, je suis prêt à mettre mes compétences au service de projets ambitieux, au sein d’une équipe dynamique et innovante.
                         </p>
                         <div class="flex justify-end">
                             
@@ -918,8 +910,21 @@
                           Prendre <p class=" sm:text-4xl text-[#EBBC86]">Contact</p>
                         </h2>
                       </div>
-                  
-                      <form class="w-full space-y-6">
+
+                       <!-- message d'alerte  --> 
+                      <?php if (isset($_GET['success']) && $_GET['success'] === '1') : ?>
+                      <div class="mb-6 text-center rounded bg-green-600/20 px-6 py-4 text-green-300 border border-green-500">
+                        ✅ Votre message a été envoyé avec succès !
+                      </div>
+
+                      <?php elseif (isset($_GET['error']) && $_GET['error'] === '1') : ?>
+                      <div class="mb-6 text-center rounded bg-red-600/20 px-6 py-4 text-red-300 border border-red-500">
+                        ❌ Une erreur est survenue lors de l’envoi du message. Veuillez réessayer.
+                      </div>
+                      <?php endif; ?>
+
+                      <!-- Formulaire  -->
+                      <form class="w-full space-y-6" method="POST" action="send.php" onsubmit="return confirmSend();">
                         <div>
                           <label for="email" class="block text-sm font-medium text-slate-400">Adresse e-mail</label>
                           <input
