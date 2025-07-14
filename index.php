@@ -3,7 +3,7 @@ if (isset($_GET['success']) && $_GET['success'] === '1') {
     echo "<p style='color: green; text-align: center;'>Message envoyé avec succès !</p>";
 }
 ?>
-
+    
 <!DOCTYPE html>
 <html class="scroll-smooth" lang="fr">
     <head>
